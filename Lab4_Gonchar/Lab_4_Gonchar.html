@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>lab_4_gonchar</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Lab_4_Gonchar_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Lab_4_Gonchar_files/libs/quarto-html/quarto.js"></script>
+<script src="Lab_4_Gonchar_files/libs/quarto-html/popper.min.js"></script>
+<script src="Lab_4_Gonchar_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Lab_4_Gonchar_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Lab_4_Gonchar_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Lab_4_Gonchar_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Lab_4_Gonchar_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Lab_4_Gonchar_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Lab_4_Gonchar_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="лабораторна-робота-3.-функція-print" class="level2">
+<h2 class="anchored" data-anchor-id="лабораторна-робота-3.-функція-print">“Лабораторна робота №3. Функція <code>print()</code>”</h2>
+</section>
+<section id="документ-зроблено-за-допомогою-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="документ-зроблено-за-допомогою-quarto">Документ зроблено за допомогою <a href="https://quarto.org/">Quarto</a></h2>
+<p>author: “© <a href="https://github.com/GoncharYuriy2004"><span style="color: blue;"> Гончар Юрій </span></a>, date:”24.09.2024”</p>
+<hr>
+<p><strong>Мета:</strong> <em>освоїти роботу з логічними змінними, операторами розгалуження та операторами циклів</em></p>
+<section id="примітка.-у-лабораторній-роботі-використано-матеріали-python-institute." class="level5">
+<h5 class="anchored" data-anchor-id="примітка.-у-лабораторній-роботі-використано-матеріали-python-institute."><strong>Примітка</strong>. У лабораторній роботі використано матеріали <a href="https://pythoninstitute.org/pcep">python institute.</a></h5>
+</section>
+</section>
+<section id="оператори-порівняння" class="level2">
+<h2 class="anchored" data-anchor-id="оператори-порівняння">Оператори порівняння</h2>
+<section id="завдання-1" class="level3">
+<h3 class="anchored" data-anchor-id="завдання-1">Завдання 1</h3>
+<p>Використовуючи один з операторів порівняння в Python, напишіть просту дворядкову програму, яка приймає як вхідні дані параметр <code>n</code>, який є цілим числом, і друкує <code>False</code>, якщо <code>n</code> менше <code>100</code> і <code>True</code>, якщо <code>n</code> більше або дорівнює <code>100</code>.<br>
+Не створюйте жодних блоків <code>if</code>. Протестуйте свій код, використовуючи дані, надані нижче.</p>
+<p><strong>Тестові дані</strong></p>
+<p>Приклад введення: <code>55</code></p>
+<p>Очікуваний вивід: <code>False</code></p>
+<p>Приклад введення: <code>100</code></p>
+<p>Очікуваний вивід: <code>True</code></p>
+<p>Приклад введення: <code>-5</code></p>
+<p>Очікуваний вивід: <code>False</code></p>
+<div id="cell-6" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Мій код </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter an integer value for n: "</span>))  </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(n <span class="op">&gt;=</span> <span class="dv">100</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter an integer value for n:  55</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>False</code></pre>
+</div>
+</div>
+<div id="cell-7" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter an integer value for n: "</span>)) </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(n <span class="op">&gt;=</span> <span class="dv">100</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter an integer value for n:  100</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="cell-8" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter an integer value for n: "</span>))  <span class="co"># Введення цілого числа</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(n <span class="op">&gt;=</span> <span class="dv">100</span>)  <span class="co"># Друк True, якщо n &gt;= 100, інакше False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter an integer value for n:  -5</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>False</code></pre>
+</div>
+</div>
+</section>
+<section id="завдання-2" class="level3">
+<h3 class="anchored" data-anchor-id="завдання-2">Завдання 2</h3>
+<p>Написати програму визначення найбільшого з двох дійсних чисел, використовуючи констуркцію <code>if-else</code>.</p>
+<div id="cell-10" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Мій код </span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Введіть перше число: "</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Введіть друге число: "</span>))</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> a <span class="op">&gt;</span> b:</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Найбільше число: </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Найбільше число: </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Введіть перше число:  12
+Введіть друге число:  24</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Найбільше число: 24.0</code></pre>
+</div>
+</div>
+</section>
+<section id="завдання-3" class="level3">
+<h3 class="anchored" data-anchor-id="завдання-3">Завдання 3</h3>
+</section>
+</section>
+<section id="конструкції-if-else-та-if-elif-else" class="level2">
+<h2 class="anchored" data-anchor-id="конструкції-if-else-та-if-elif-else">Конструкції <code>if-else</code> та <code>if-elif-else</code></h2>
+<p>Спатифіллум, більш відомий як лілія світу або біле вітрило, є одним з найпопулярніших кімнатних рослин, що фільтрують шкідливі токсини з повітря. Деякі з токсинів, які він нейтралізує, включають бензол, формальдегід та аміак.</p>
+<p>Уявіть, що ваша комп’ютерна програма любить ці рослини. Щоразу, коли вона отримує введення у вигляді слова Spathiphyllum, вона мимоволі вигукує в консоль наступний рядок: “Spathiphyllum is the best plant ever!”</p>
+<p>Напишіть програму, яка використовує концепцію умовного виконання, приймає рядок як вхідні дані та:</p>
+<ul>
+<li>виводить на екран пропозицію “Yes - Spathiphyllum is the best plant ever!”, якщо введений рядок - “Spathiphyllum” (верхній регістр)</li>
+<li>друкує “No, I want a big Spathiphyllum!”, якщо введений рядок - “spathiphyllum” (у нижньому регістрі) виводить “Spathiphyllum! Not [input]!” в іншому випадку.<br>
+<strong>Примітка.</strong> [input] - це рядок, прийнятий як вхідний.</li>
+</ul>
+<p>Протестуйте свій код, використовуючи дані, які надано нижче.</p>
+<p><strong>Тестові дані</strong></p>
+<p>Приклад введення: <code>spathiphyllum</code></p>
+<p>Очікуваний вивід: <code>No, I want a big Spathiphyllum!</code></p>
+<p>Приклад введення: <code>pelargonium</code></p>
+<p>Очікуваний вивід: <code>Spathiphyllum! Not pelargonium!</code></p>
+<p>Приклад введення: <code>Spathiphyllum</code></p>
+<p>Очікуваний вивід: <code>Yes - Spathiphyllum is the best plant ever!</code></p>
+<div id="cell-16" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Мій код </span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># spathiphyllum</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>plant <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> plant <span class="op">==</span> <span class="st">"Spathiphyllum"</span>:</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Yes - Spathiphyllum is the best plant ever!"</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> plant <span class="op">==</span> <span class="st">"spathiphyllum"</span>:</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"No, I want a big Spathiphyllum!"</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Spathiphyllum! Not </span><span class="sc">{</span>plant<span class="sc">}</span><span class="ss">!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code> spathiphyllum</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>No, I want a big Spathiphyllum!</code></pre>
+</div>
+</div>
+<div id="cell-17" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pelargonium</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>plant <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> plant <span class="op">==</span> <span class="st">"Spathiphyllum"</span>:</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Yes - Spathiphyllum is the best plant ever!"</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> plant <span class="op">==</span> <span class="st">"spathiphyllum"</span>:</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"No, I want a big Spathiphyllum!"</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Spathiphyllum! Not </span><span class="sc">{</span>plant<span class="sc">}</span><span class="ss">!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code> pelargonium</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Spathiphyllum! Not pelargonium!</code></pre>
+</div>
+</div>
+<div id="cell-18" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Spathiphyllum</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plant <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> plant <span class="op">==</span> <span class="st">"Spathiphyllum"</span>:</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Yes - Spathiphyllum is the best plant ever!"</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> plant <span class="op">==</span> <span class="st">"spathiphyllum"</span>:</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"No, I want a big Spathiphyllum!"</span>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Spathiphyllum! Not </span><span class="sc">{</span>plant<span class="sc">}</span><span class="ss">!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code> Spathiphyllum</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Yes - Spathiphyllum is the best plant ever!</code></pre>
+</div>
+</div>
+<section id="завдання-4" class="level3">
+<h3 class="anchored" data-anchor-id="завдання-4">Завдання 4</h3>
+<p>Жила-була земля – земля молока та меду, населена щасливими та заможними людьми. Звісно, люди платили податки – їх щастя мало межі. Найважливіший податок, так званий податок на доходи фізичних осіб (скорочено ПДФО), повинен був сплачуватись один раз на рік та оцінювався за таким правилом:</p>
+<ul>
+<li>якщо дохід громадянина не перевищував 85528 талерів, податок становив 18% від доходу мінус 556 талерів і 2 центи (це було те, що вони називали податковими пільгами)<br>
+</li>
+<li>якщо дохід був вищим за цю суму, податок становив 14 839 талерів 2 центи плюс 32% надлишку понад 85 528 талерів.<br>
+Ваше завдання – написати калькулятор податків.</li>
+</ul>
+<p>Він повинен приймати одне значення з плаваючою комою: дохід. Потім він має вивести розрахований податок, заокруглений до повних талерів. Є функція з ім’ям <code>ound()</code>, яка виконуватиме заокруглення за вас – ви знайдете її в скелетному коді нижче.<br>
+<strong>Примітка:</strong> ця щаслива країна ніколи не повертала своїм громадянам грошей. Якщо розрахований податок був меншим за нуль, це означало б тільки повну відсутність податку (податок дорівнював нулю). Врахуйте це під час розрахунків.</p>
+<p>Подивіться на код нижче - він зчитує лише одне вхідне значення та виводить результат, тому вам потрібно завершити його деякими розумними обчисленнями.</p>
+<p>Протестуйте свій код, використовуючи тестові дані, наведені нижче.</p>
+<div id="cell-21" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># income = float(input("Enter the annual income: "))</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here.</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># tax = round(tax, 0)</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># print("The tax is:", tax, "thalers")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Тестові дані</strong></p>
+<p>Очикуваний вивод:</p>
+<p>Приклад введення: <code>10000</code></p>
+<p>Очікуваний вивід: <code>The tax is: 1244.0 thalers</code></p>
+<p>Приклад введення: <code>100000</code></p>
+<p>Очікуваний вивід: <code>The tax is: 19470.0 thalers</code></p>
+<p>Приклад введення: <code>1000</code></p>
+<p>Очікуваний вивід <code>The tax is: 0.0 thalers</code></p>
+<p>Приклад введення: <code>-100</code></p>
+<p>Очікуваний вивід <code>The tax is: 0.0 thalers</code></p>
+<div id="cell-23" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Мій код </span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">#1</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Отримуємо річний дохід від користувача</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Enter the annual income: "</span>))</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Пороговий дохід для зміни ставки податку</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>threshold <span class="op">=</span> <span class="dv">85528</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Розраховуємо податок за умовами</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> income <span class="op">&lt;=</span> threshold:</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    tax <span class="op">=</span> (income <span class="op">*</span> <span class="fl">0.18</span>) <span class="op">-</span> <span class="fl">556.02</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    tax <span class="op">=</span> <span class="fl">14839.02</span> <span class="op">+</span> (income <span class="op">-</span> threshold) <span class="op">*</span> <span class="fl">0.32</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Якщо податок менший за 0, робимо його рівним 0</span></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> tax <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>    tax <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Округлюємо податок до найближчого цілого значення</span></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>tax <span class="op">=</span> <span class="bu">round</span>(tax, <span class="dv">0</span>)</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Виводимо результат</span></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The tax is:"</span>, tax, <span class="st">"thalers"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter the annual income:  10000</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The tax is: 1244.0 thalers</code></pre>
+</div>
+</div>
+<div id="cell-24" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#2 </span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Enter the annual income: "</span>))</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>threshold <span class="op">=</span> <span class="dv">85528</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> income <span class="op">&lt;=</span> threshold:</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    tax <span class="op">=</span> (income <span class="op">*</span> <span class="fl">0.18</span>) <span class="op">-</span> <span class="fl">556.02</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    tax <span class="op">=</span> <span class="fl">14839.02</span> <span class="op">+</span> (income <span class="op">-</span> threshold) <span class="op">*</span> <span class="fl">0.32</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> tax <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    tax <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>tax <span class="op">=</span> <span class="bu">round</span>(tax, <span class="dv">0</span>)</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The tax is:"</span>, tax, <span class="st">"thalers"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter the annual income:  100000</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The tax is: 19470.0 thalers</code></pre>
+</div>
+</div>
+<div id="cell-25" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#3</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Enter the annual income: "</span>))</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>threshold <span class="op">=</span> <span class="dv">85528</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> income <span class="op">&lt;=</span> threshold:</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    tax <span class="op">=</span> (income <span class="op">*</span> <span class="fl">0.18</span>) <span class="op">-</span> <span class="fl">556.02</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    tax <span class="op">=</span> <span class="fl">14839.02</span> <span class="op">+</span> (income <span class="op">-</span> threshold) <span class="op">*</span> <span class="fl">0.32</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> tax <span class="op">&lt;</span> <span class="fl">0.0</span>:</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    tax <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>tax <span class="op">=</span> <span class="bu">round</span>(tax, <span class="dv">0</span>)</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The tax is:"</span>, tax, <span class="st">"thalers"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter the annual income:  1000</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The tax is: 0.0 thalers</code></pre>
+</div>
+</div>
+<div id="cell-26" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#4</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Enter the annual income: "</span>))</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>threshold <span class="op">=</span> <span class="dv">85528</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> income <span class="op">&lt;=</span> threshold:</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    tax <span class="op">=</span> (income <span class="op">*</span> <span class="fl">0.18</span>) <span class="op">-</span> <span class="fl">556.02</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    tax <span class="op">=</span> <span class="fl">14839.02</span> <span class="op">+</span> (income <span class="op">-</span> threshold) <span class="op">*</span> <span class="fl">0.32</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> tax <span class="op">&lt;</span> <span class="fl">0.0</span>:</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>    tax <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>tax <span class="op">=</span> <span class="bu">round</span>(tax, <span class="dv">0</span>)</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The tax is:"</span>, tax, <span class="st">"thalers"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter the annual income:  -100</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The tax is: 0.0 thalers</code></pre>
+</div>
+</div>
+</section>
+<section id="завдання-5" class="level3">
+<h3 class="anchored" data-anchor-id="завдання-5">Завдання 5</h3>
+<p>Як ви, напевно, знаєте, з деяких астрономічних причин роки можуть бути високосними або звичайними. Перші тривають 366 днів, а другі – 365 днів.</p>
+<p>З моменту введення григоріанського календаря (1582) для визначення року використовується наступне правило:</p>
+<ul>
+<li>якщо номер року не ділиться на чотири, це звичайний рік;</li>
+<li>в іншому випадку, якщо номер року не ділиться на 100, це високосний рік;</li>
+<li>в іншому випадку, якщо номер року не ділиться на 400, це звичайний рік;</li>
+<li>інакше це високосний рік.</li>
+</ul>
+<p>Подивіться на код у редакторі – він читає лише номер року і має бути доповнений інструкціями, що реалізують тест, який описаний вище.</p>
+<p>Код має виводити одне з двох можливих повідомлень: <code>Leap year</code> або <code>Common year</code>, залежно від введеного значення.</p>
+<p>Було б добре перевірити, чи належить введений рік до григоріанської ери, і вивести попередження інакше: <code>Not within the Gregorian calendar period.</code></p>
+<p><strong>Підказка:</strong> використовуйте оператори <code>!=</code> та <code>%</code>.</p>
+<p>Протестуйте свій код, використовуючи надані нами дані.</p>
+<p><strong>Тестові дані</strong></p>
+<p>Приклад введення: <code>2000</code></p>
+<p>Очікуваний вивід: <code>Leap yea</code>r</p>
+<p>Приклад введення: <code>2015</code></p>
+<p>Очікуваний вивід: <code>Common yea</code>r</p>
+<p>Приклад введення: <code>1999</code></p>
+<p>Очікуваний вивід: <code>Common yea</code>r</p>
+<p>Приклад введення: <code>1996</code></p>
+<p>Очікуваний вивід: <code>Leap yea</code></p>
+<p>Приклад введення: <code>1580</code></p>
+<p>Очікуваний вивід: <code>Not within the Gregorian calendar period</code>вивід</p>
+<div id="cell-30" class="cell" data-execution_count="75">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Отримуємо рік від користувача</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>year <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter a year: "</span>))</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Перевіряємо, чи рік входить до григоріанської ери</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> year <span class="op">&lt;</span> <span class="dv">1582</span>:</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Not within the Gregorian calendar period"</span>)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Визначаємо, чи є рік високосним або звичайним</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> year <span class="op">%</span> <span class="dv">4</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Common year"</span>)</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> year <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Leap year"</span>)</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> year <span class="op">%</span> <span class="dv">400</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Common year"</span>)</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Leap year"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a year:  2000</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Leap year</code></pre>
+</div>
+</div>
+<div id="cell-31" class="cell" data-execution_count="77">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>year <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter a year: "</span>))</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> year <span class="op">&lt;</span> <span class="dv">1582</span>:</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Not within the Gregorian calendar period"</span>)</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> year <span class="op">%</span> <span class="dv">4</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Common year"</span>)</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> year <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Leap year"</span>)</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> year <span class="op">%</span> <span class="dv">400</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Common year"</span>)</span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Leap year"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a year:  2015</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Common year</code></pre>
+</div>
+</div>
+<div id="cell-32" class="cell" data-execution_count="79">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>year <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter a year: "</span>))</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> year <span class="op">&lt;</span> <span class="dv">1582</span>:</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Not within the Gregorian calendar period"</span>)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> year <span class="op">%</span> <span class="dv">4</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Common year"</span>)</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> year <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Leap year"</span>)</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> year <span class="op">%</span> <span class="dv">400</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Common year"</span>)</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Leap year"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a year:  1999</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Common year</code></pre>
+</div>
+</div>
+<div id="cell-33" class="cell" data-execution_count="81">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>year <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter a year: "</span>))</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> year <span class="op">&lt;</span> <span class="dv">1582</span>:</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Not within the Gregorian calendar period"</span>)</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> year <span class="op">%</span> <span class="dv">4</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Common year"</span>)</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> year <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Leap year"</span>)</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> year <span class="op">%</span> <span class="dv">400</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Common year"</span>)</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Leap year"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a year:  1996</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Leap year</code></pre>
+</div>
+</div>
+<div id="cell-34" class="cell" data-execution_count="83">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>year <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter a year: "</span>))</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> year <span class="op">&lt;</span> <span class="dv">1582</span>:</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Not within the Gregorian calendar period"</span>)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> year <span class="op">%</span> <span class="dv">4</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Common year"</span>)</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> year <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Leap year"</span>)</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> year <span class="op">%</span> <span class="dv">400</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Common year"</span>)</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Leap year"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a year:  1580</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Not within the Gregorian calendar period</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="організація-циклів-за-допомогою-while" class="level2">
+<h2 class="anchored" data-anchor-id="організація-циклів-за-допомогою-while">Організація циклів за допомогою <code>while</code></h2>
+<p><strong>Приклад</strong></p>
+<p>Програма, яка читає послідовність чисел і підраховує, скільки чисел є парними, а скільки непарними. Програма завершується після введення нуля.</p>
+<div id="cell-37" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>odd_numbers <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>even_numbers <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the first number.</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter a number or type 0 to stop: "</span>))</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 0 terminates execution.</span></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> number <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Check if the number is odd.</span></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> number <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Increase the odd_numbers counter.</span></span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>        odd_numbers <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Increase the even_numbers counter.</span></span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>        even_numbers <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Read the next number.</span></span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>    number <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter a number or type 0 to stop: "</span>))</span>
+<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Print results.</span></span>
+<span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Odd numbers count:"</span>, odd_numbers)</span>
+<span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Even numbers count:"</span>, even_numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a number or type 0 to stop:  0</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Odd numbers count: 0
+Even numbers count: 0</code></pre>
+</div>
+</div>
+<p>Виход із циклу може бути оптімізовано за рахунок використання змінної <code>counter</code> наступним чином.</p>
+<div id="cell-39" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> counter:</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Inside the loop."</span>, counter)</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>    counter <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Outside the loop."</span>, counter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Inside the loop. 5
+Inside the loop. 4
+Inside the loop. 3
+Inside the loop. 2
+Inside the loop. 1
+Outside the loop. 0</code></pre>
+</div>
+</div>
+<section id="завдання-6" class="level3">
+<h3 class="anchored" data-anchor-id="завдання-6">Завдання 6</h3>
+<p>Молодший чарівник вибрав таємне число. Він сховав його в змінну з ім’ям <code>secret_number</code>. Він хоче, щоб кожен, хто запускає його програму, грав у гру <em>Вгадай секретний номер</em> і вгадав, яке число він вибрав для них. Ті, хто не вгадає число, назавжди застрянуть у нескінченній петлі! На жаль, він не знає, як завершити код.</p>
+<p>Ваше завдання допомогти фокуснику доповнити код у редакторі таким чином, щоб код:</p>
+<ul>
+<li>попросив користувача ввести ціле число;</li>
+<li>використовувавши цикл <code>while</code>;</li>
+<li>перевірити, чи включає введене користувачем число з числом, вибраним фокусником. Якщо число, обране користувачем, відрізняється від секретного числа чарівника, користувач повинен побачити повідомлення <code>"Ха-ха! Ви застрягли у моїй петлі!"</code> і отримати запит на повторне введення числа. Якщо число, введене користувачем, співпадає з числом, вибраним фокусником, число має бути надруковане на екрані, і фокусник повинен вимовити наступне слово: <code>«Молодець, магле! Тепер ти вільний»</code>.</li>
+</ul>
+<p>Чарівник розраховує на Вас! Не розчаровуйте його.</p>
+<p>ДОДАТКОВА ІНФОРМАЦІЯ</p>
+<p>До речі, подивитесь на функцію <code>print()</code>. Те, як ми це використовували тут, називається багаторядковим друком. Ви можете використовувати три кавички для друку рядка в кількох рядках, щоб текст був легшим для читання, або для створення спеціального текстового дизайну. Поекспериментуйте з цим.</p>
+<div id="cell-42" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co">#secret_number = 777</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="st">+================================+</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="st">| Welcome to my game, muggle!    |</span></span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a><span class="st">| Enter an integer number        |</span></span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="st">| and guess what number I've     |</span></span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a><span class="st">| picked for you.                |</span></span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a><span class="st">| So, what is the secret number? |</span></span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a><span class="st">+================================+</span></span>
+<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
++================================+
+| Welcome to my game, muggle!    |
+| Enter an integer number        |
+| and guess what number I've     |
+| picked for you.                |
+| So, what is the secret number? |
++================================+
+</code></pre>
+</div>
+</div>
+<div id="cell-43" class="cell" data-execution_count="85">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Мій код</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Вибране секретне число</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>secret_number <span class="op">=</span> <span class="dv">777</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Виведення вітального повідомлення</span></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a><span class="st">+================================+</span></span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a><span class="st">| Welcome to my game, muggle!    |</span></span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a><span class="st">| Enter an integer number        |</span></span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a><span class="st">| and guess what number I've     |</span></span>
+<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a><span class="st">| picked for you.                |</span></span>
+<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a><span class="st">| So, what is the secret number? |</span></span>
+<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a><span class="st">+================================+</span></span>
+<span id="cb57-16"><a href="#cb57-16" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>)</span>
+<span id="cb57-17"><a href="#cb57-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-18"><a href="#cb57-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Цикл, який повторюється, доки користувач не вгадає секретне число</span></span>
+<span id="cb57-19"><a href="#cb57-19" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb57-20"><a href="#cb57-20" aria-hidden="true" tabindex="-1"></a>    user_guess <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter your guess: "</span>))  <span class="co"># Вводимо число від користувача</span></span>
+<span id="cb57-21"><a href="#cb57-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb57-22"><a href="#cb57-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> user_guess <span class="op">==</span> secret_number:</span>
+<span id="cb57-23"><a href="#cb57-23" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Молодець, магле! Тепер ти вільний"</span>)</span>
+<span id="cb57-24"><a href="#cb57-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span>  <span class="co"># Якщо користувач вгадав, завершуємо цикл</span></span>
+<span id="cb57-25"><a href="#cb57-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb57-26"><a href="#cb57-26" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ха-ха! Ви застрягли у моїй петлі!"</span>)  <span class="co"># Повідомлення про помилку і повторний запит</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
++================================+
+| Welcome to my game, muggle!    |
+| Enter an integer number        |
+| and guess what number I've     |
+| picked for you.                |
+| So, what is the secret number? |
++================================+
+</code></pre>
+</div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter your guess:  777</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Молодець, магле! Тепер ти вільний</code></pre>
+</div>
+</div>
+<div id="cell-44" class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="st">+================================+</span></span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a><span class="st">| Welcome to my game, muggle!    |</span></span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a><span class="st">| Enter an integer number        |</span></span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a><span class="st">| and guess what number I've     |</span></span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a><span class="st">| picked for you.                |</span></span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a><span class="st">| So, what is the secret number? |</span></span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a><span class="st">+================================+</span></span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>)</span>
+<span id="cb61-12"><a href="#cb61-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-13"><a href="#cb61-13" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb61-14"><a href="#cb61-14" aria-hidden="true" tabindex="-1"></a>    user_guess <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter your guess: "</span>))  </span>
+<span id="cb61-15"><a href="#cb61-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb61-16"><a href="#cb61-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> user_guess <span class="op">==</span> secret_number:</span>
+<span id="cb61-17"><a href="#cb61-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Молодець, магле! Тепер ти вільний"</span>)</span>
+<span id="cb61-18"><a href="#cb61-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span>  </span>
+<span id="cb61-19"><a href="#cb61-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb61-20"><a href="#cb61-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ха-ха! Ви застрягли у моїй петлі!"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
++================================+
+| Welcome to my game, muggle!    |
+| Enter an integer number        |
+| and guess what number I've     |
+| picked for you.                |
+| So, what is the secret number? |
++================================+
+</code></pre>
+</div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter your guess:  555</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Ха-ха! Ви застрягли у моїй петлі!</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="організація-циклів-за-допомогою-for" class="level2">
+<h2 class="anchored" data-anchor-id="організація-циклів-за-допомогою-for">Організація циклів за допомогою <code>for</code></h2>
+<section id="завдання-7" class="level3">
+<h3 class="anchored" data-anchor-id="завдання-7">Завдання 7</h3>
+<p>Ви знаєте, що таке Міссісіпі? Ну, це назва одного зі штатів та річок у Сполучених Штатах. Довжина річки Міссісіпі становить близько 2340 миль, що робить її другою за довжиною річкою у Сполучених Штатах (найдовшою з них є річка Міссурі). Це так багато, що одній краплі води потрібно 90 днів, щоб пройти весь її шлях!</p>
+<p>Слово Міссісіпі також використовується для дещо іншої мети: для рахунку Міссісіпі.</p>
+<p>Якщо ви не знайомі з цією фразою, ми можемо пояснити вам, що вона означає: вона використовується для підрахунку секунд.</p>
+<p>Ідея полягає в тому, що додавання слова Міссісіпі до числа при підрахунку секунд вголос змушує рахунок бути хронологічно точніше, і, отже, вимова “один Міссісіпі, два Міссісіпі, три Міссісіпі” займе приблизно три секунди! Рахунок Міссісіпі часто використовують діти, які грають у хованки, щоб переконатися, що той, хто шукає чесно, підраховує час.</p>
+<p>Ваше завдання тут дуже просте: напишіть програму, яка використовує цикл <code>for</code> для «рахунку Міссісіпі» до п’яти. Порахувавши до п’яти, програма повинна вивести на екран фінальне повідомлення <code>"Ready or not, here I come!"</code></p>
+<p>Використовуйте код, який ми надали у редакторі.</p>
+<p>ДОДАТКОВА ІНФОРМАЦІЯ</p>
+<p>Зверніть увагу, що код редактора містить два елементи, які можуть бути наразі вам не зовсім зрозумілі: оператор <code>import time</code> і метод <code>sleep()</code>. Ми незабаром про них поговоримо.</p>
+<p>Наразі ми просто хотіли, щоб ви знали, що ми імпортували модуль <code>time</code> і використовували метод <code>sleep()</code> для припинення виконання кожної наступної функції <code>print()</code> всередині циклу <code>for</code> на одну секунду, щоб повідомлення, яке виводиться на консоль, було схоже на фактичний підрахунок.</p>
+<div id="cell-48" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Write a for loop that counts to five.</span></span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Body of the loop - print the loop iteration number and the word "Mississippi".</span></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Body of the loop - use: time.sleep(1)</span></span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Write a print function with the final message.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Очикуваний вивід</em></p>
+<p><code>1 Mississippi</code><br>
+<code>2 Mississippi</code><br>
+<code>3 Mississippi</code><br>
+<code>4 Mississippi</code><br>
+<code>5 Mississippi</code></p>
+<div id="cell-50" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Мій код </span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Цикл для рахунку від 1 до 5</span></span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Вивести номер і слово "Mississippi"</span></span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> Mississippi"</span>)</span>
+<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Затримка на 1 секунду</span></span>
+<span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">1</span>)</span>
+<span id="cb66-10"><a href="#cb66-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-11"><a href="#cb66-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Фінальне повідомлення після завершення циклу</span></span>
+<span id="cb66-12"><a href="#cb66-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ready or not, here I come!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1 Mississippi
+2 Mississippi
+3 Mississippi
+4 Mississippi
+5 Mississippi
+Ready or not, here I come!</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="оператори-break-і-continue" class="level2">
+<h2 class="anchored" data-anchor-id="оператори-break-і-continue">Оператори <code>break</code> і <code>continue</code></h2>
+<section id="завдання-8" class="level3">
+<h3 class="anchored" data-anchor-id="завдання-8">Завдання 8</h3>
+<p>Оператор <code>break</code> використовується для завершення/виходу з циклу.</p>
+<p>Розробте програму, яка використовує цикл <code>while</code> і постійно просить користувача ввести слово, якщо користувач не вводить <code>"chupacabra"</code> як секретне вихідне слово, і в цьому випадку повідомлення <code>"You've successfully left the loop."</code> має бути виведений на екран, а цикл має завершитись.</p>
+<p>Не друкуйте жодне із введених користувачем слів. Використовуйте концепцію умовного виконання та інструкцію <code>break</code>.</p>
+<div id="cell-54" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Мій код </span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Просимо користувача ввести слово</span></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>    word <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a word: "</span>)</span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Перевіряємо, чи введене слово є "chupacabra"</span></span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> word <span class="op">==</span> <span class="st">"chupacabra"</span>:</span>
+<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Завершуємо цикл за допомогою break</span></span>
+<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-11"><a href="#cb68-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Повідомлення про успішний вихід із циклу</span></span>
+<span id="cb68-12"><a href="#cb68-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"You've successfully left the loop."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a word:  chupacabra</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>You've successfully left the loop.</code></pre>
+</div>
+</div>
+</section>
+<section id="завдання-9" class="level3">
+<h3 class="anchored" data-anchor-id="завдання-9">Завдання 9</h3>
+<p>Оператор <code>continue</code> використовується для пропуску поточного блоку та переходу до наступної ітерації без виконання операторів усередині циклу.</p>
+<p>Його можна використовувати з циклами <code>while</code> та <code>for</code>.</p>
+<p>Ваше завдання тут особливе: Ви повинні створити пожирача голосних! Напишіть програму, яка використовує:</p>
+<ul>
+<li>цикл <code>for</code>;</li>
+<li>концепцію умовного виконання (<code>if-elif-else</code>)</li>
+<li>оператор <code>continue</code>.</li>
+</ul>
+<p>Ваша програма повинна:</p>
+<ul>
+<li>попросити користувача ввести слово;</li>
+<li>використовувати <code>user_word = user_word.upper()</code>, щоб перетворити слово, введене користувачем, у верхній регістр; ми поговоримо про рядкові методи та метод <code>upper()</code> у наступних лекціях;</li>
+<li>використовуйте умовне виконання та оператор <code>continue</code>, щоб “з’їсти” наступні голосні <code>A</code>, <code>E</code>, <code>I</code>, <code>O</code>, <code>U</code> у введеному слові;</li>
+<li>виведіть на екран нез’їдені літери, кожну в окремому рядку.</li>
+</ul>
+<p>Протестуйте свою програму з даними, які надані нижче.</p>
+<div id="cell-57" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prompt the user to enter a word</span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="co"># and assign it to the user_word variable.</span></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="co"># for letter in user_word:</span></span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Complete the body of the for loop.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Тестові дані</strong></p>
+<p>Зразкове введення: <code>Gregory</code></p>
+<p>Очікуваний вивід:</p>
+<p><code>G</code><br>
+<code>R</code><br>
+<code>G</code><br>
+<code>R</code><br>
+<code>Y</code></p>
+<p>Зразкове введення: <code>abstemious</code></p>
+<p>Очікуваний вивід:</p>
+<p><code>B</code><br>
+<code>S</code><br>
+<code>T</code><br>
+<code>M</code><br>
+<code>S</code></p>
+<p>Зразкове введення: <code>IOUEA</code></p>
+<p>Очікуваний вивід:</p>
+<p><code></code></p>
+<div id="cell-59" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Запитуємо користувача ввести слово</span></span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>user_word <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a word: "</span>)</span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Перетворюємо слово у верхній регістр</span></span>
+<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a>user_word <span class="op">=</span> user_word.upper()</span>
+<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Проходимо по кожній літері у слові</span></span>
+<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letter <span class="kw">in</span> user_word:</span>
+<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Перевіряємо, чи літера є голосною</span></span>
+<span id="cb72-11"><a href="#cb72-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> letter <span class="kw">in</span> (<span class="st">'A'</span>, <span class="st">'E'</span>, <span class="st">'I'</span>, <span class="st">'O'</span>, <span class="st">'U'</span>):</span>
+<span id="cb72-12"><a href="#cb72-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Пропускаємо поточну ітерацію, якщо літера голосна</span></span>
+<span id="cb72-13"><a href="#cb72-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb72-14"><a href="#cb72-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Виводимо нез'їдену літеру</span></span>
+<span id="cb72-15"><a href="#cb72-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(letter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a word:  Gregory</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>G
+R
+G
+R
+Y</code></pre>
+</div>
+</div>
+<div id="cell-60" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2</span></span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>user_word <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a word: "</span>)</span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>user_word <span class="op">=</span> user_word.upper()</span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letter <span class="kw">in</span> user_word:</span>
+<span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> letter <span class="kw">in</span> (<span class="st">'A'</span>, <span class="st">'E'</span>, <span class="st">'I'</span>, <span class="st">'O'</span>, <span class="st">'U'</span>):</span>
+<span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb75-8"><a href="#cb75-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(letter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a word:  abstemious</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>B
+S
+T
+M
+S</code></pre>
+</div>
+</div>
+<div id="cell-61" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>user_word <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a word: "</span>)</span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>user_word <span class="op">=</span> user_word.upper()</span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letter <span class="kw">in</span> user_word:</span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> letter <span class="kw">in</span> (<span class="st">'A'</span>, <span class="st">'E'</span>, <span class="st">'I'</span>, <span class="st">'O'</span>, <span class="st">'U'</span>):</span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(letter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a word:  IOUEA</code></pre>
+</div>
+</div>
+</section>
+<section id="завдання-10" class="level3">
+<h3 class="anchored" data-anchor-id="завдання-10">Завдання 10</h3>
+<p>Ваше завдання тут ще особливіше, ніж раніше: Ви повинні переробити (потворного) пожирача голосних із попереднього завдання і створити кращого, покращеного (красивого) пожирача голосних! Напишіть програму, яка використовує:</p>
+<ul>
+<li>цикл <code>for</code>;</li>
+<li>концепцію умовного виконання (<code>if-elif-else</code>)</li>
+<li>оператор <code>continue</code>.</li>
+</ul>
+<p>Ваша програма повинна:</p>
+<ul>
+<li>попросити користувача ввести слово;</li>
+<li>використовувати <code>user_word = user_word.upper()</code>, щоб перетворити слово, введене користувачем, у верхній регістр; * використовувати умовне виконання та оператор <code>continue</code> , щоб “з’їсти” наступні голосні <code>A, E, I, O, U</code> від введеного слова;</li>
+<li>присвоїти нез’їдені літери змінної <code>word_without_vowels</code> та вивести змінну на екран.</li>
+</ul>
+<p>Подивіться код нижче. Ми створили <code>word_without_vowels</code> і надали йому порожній рядок. Використовуйте операцію конкатенації, щоб попросити Python об’єднати вибрані літери у довший рядок у наступних ітераціях циклу та призначити її змінною <code>word_without_vowels</code>.</p>
+<p>Протестуйте свою програму з даними, які ми надали.</p>
+<div id="cell-64" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>word_without_vowels <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Prompt the user to enter a word</span></span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a><span class="co"># and assign it to the user_word variable.</span></span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a><span class="co"># for letter in user_word:</span></span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Complete the body of the loop.</span></span>
+<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-10"><a href="#cb80-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the word assigned to word_without_vowels.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Тестові дані</strong></p>
+<p>Зразкове введення:<code>Gregory</code></p>
+<p>Очікуваний вивід:</p>
+<p><code>GRGRY</code></p>
+<p>Зразкове введення: abstemious</p>
+<p>Очікуваний вивід:</p>
+<p><code>BSTMS</code></p>
+<p>Зразкове введення: <code>IOUEA</code></p>
+<p>Очікуваний вивід:</p>
+<p><code></code></p>
+<div id="cell-66" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1 </span></span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Ініціалізуємо змінну для зберігання слова без голосних</span></span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>word_without_vowels <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Запитуємо користувача ввести слово</span></span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>user_word <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a word: "</span>)</span>
+<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-8"><a href="#cb81-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Перетворюємо слово у верхній регістр</span></span>
+<span id="cb81-9"><a href="#cb81-9" aria-hidden="true" tabindex="-1"></a>user_word <span class="op">=</span> user_word.upper()</span>
+<span id="cb81-10"><a href="#cb81-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-11"><a href="#cb81-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Проходимо по кожній літері у слові</span></span>
+<span id="cb81-12"><a href="#cb81-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letter <span class="kw">in</span> user_word:</span>
+<span id="cb81-13"><a href="#cb81-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Перевіряємо, чи літера є голосною</span></span>
+<span id="cb81-14"><a href="#cb81-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> letter <span class="kw">in</span> (<span class="st">'A'</span>, <span class="st">'E'</span>, <span class="st">'I'</span>, <span class="st">'O'</span>, <span class="st">'U'</span>):</span>
+<span id="cb81-15"><a href="#cb81-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Пропускаємо поточну ітерацію, якщо літера голосна</span></span>
+<span id="cb81-16"><a href="#cb81-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb81-17"><a href="#cb81-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Додаємо нез'їдену літеру до word_without_vowels</span></span>
+<span id="cb81-18"><a href="#cb81-18" aria-hidden="true" tabindex="-1"></a>    word_without_vowels <span class="op">+=</span> letter</span>
+<span id="cb81-19"><a href="#cb81-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-20"><a href="#cb81-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Виводимо слово без голосних</span></span>
+<span id="cb81-21"><a href="#cb81-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(word_without_vowels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a word:  Gregory</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>GRGRY</code></pre>
+</div>
+</div>
+<div id="cell-67" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2 </span></span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>word_without_vowels <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>user_word <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a word: "</span>)</span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>user_word <span class="op">=</span> user_word.upper()</span>
+<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letter <span class="kw">in</span> user_word:</span>
+<span id="cb84-7"><a href="#cb84-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> letter <span class="kw">in</span> (<span class="st">'A'</span>, <span class="st">'E'</span>, <span class="st">'I'</span>, <span class="st">'O'</span>, <span class="st">'U'</span>):</span>
+<span id="cb84-8"><a href="#cb84-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb84-9"><a href="#cb84-9" aria-hidden="true" tabindex="-1"></a>    word_without_vowels <span class="op">+=</span> letter</span>
+<span id="cb84-10"><a href="#cb84-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(word_without_vowels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a word:  abstemious</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>BSTMS</code></pre>
+</div>
+</div>
+<div id="cell-68" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3 </span></span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>word_without_vowels <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>user_word <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a word: "</span>)</span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a>user_word <span class="op">=</span> user_word.upper()</span>
+<span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letter <span class="kw">in</span> user_word:</span>
+<span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> letter <span class="kw">in</span> (<span class="st">'A'</span>, <span class="st">'E'</span>, <span class="st">'I'</span>, <span class="st">'O'</span>, <span class="st">'U'</span>):</span>
+<span id="cb87-8"><a href="#cb87-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb87-9"><a href="#cb87-9" aria-hidden="true" tabindex="-1"></a>    word_without_vowels <span class="op">+=</span> letter</span>
+<span id="cb87-10"><a href="#cb87-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(word_without_vowels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a word:  IOUEA</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code></code></pre>
+</div>
+</div>
+</section>
+<section id="завдання-11" class="level3">
+<h3 class="anchored" data-anchor-id="завдання-11">Завдання 11</h3>
+<p>Послухайте цю історію: хлопчик та його батько, програміст, грають із дерев’яними кубиками. Вони будують піраміду (рис. 1).</p>
+<p>Їхня піраміда трохи дивна, тому що насправді це стіна у формі піраміди – вона плоска. Піраміда складається за одним простим принципом: кожен нижній шар містить на один блок більше, ніж шар вище.</p>
+<p>На рис. 1 показано правило, що використовується будівельниками:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Lab_4_Gonchar_files/figure-html/cell-71-1-a41b02e3-9575-4e30-949d-2a3d3a0cdd64.png" class="img-fluid figure-img"></p>
+<figcaption>Рис. 1</figcaption>
+</figure>
+</div>
+<p>Ваше завдання – написати програму, яка зчитує кількість блоків, що є у будівельників, та виводить висоту піраміди, яку можна побудувати з цих блоків.</p>
+<p><strong>Примітка:</strong> висота вимірюється кількістю повністю завершених шарів –- якщо будівельники не мають достатньої кількості блоків та не можуть завершити наступний шар, вони негайно закінчують свою роботу.</p>
+<p>Протестуйте свій код, використовуючи надані нами дані.</p>
+<p><strong>Тестові дані</strong></p>
+<p>Зразкове введення: <code>6</code></p>
+<p>Очікуваний вивід: <code>The height of the pyramid: 3</code></p>
+<p>Зразкове введення: <code>20</code></p>
+<p>Очікуваний вивід: <code>The height of the pyramid: 5</code></p>
+<p>Зразкове введення: <code>1000</code></p>
+<p>Очікуваний вивід: <code>The height of the pyramid: 44</code></p>
+<p>Зразкове введення: <code>2</code></p>
+<p>Очікуваний вивід: <code>The height of the pyramid: 1</code></p>
+<div id="cell-74" class="cell" data-execution_count="67">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Мій код </span></span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Отримуємо кількість блоків від користувача</span></span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a>blocks <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter the number of blocks: "</span>))</span>
+<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Ініціалізуємо змінні для висоти та кількості блоків у поточному шарі</span></span>
+<span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb90-7"><a href="#cb90-7" aria-hidden="true" tabindex="-1"></a>current_layer_blocks <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb90-8"><a href="#cb90-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-9"><a href="#cb90-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Поки у нас є достатньо блоків для побудови поточного шару</span></span>
+<span id="cb90-10"><a href="#cb90-10" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> blocks <span class="op">&gt;=</span> current_layer_blocks:</span>
+<span id="cb90-11"><a href="#cb90-11" aria-hidden="true" tabindex="-1"></a>    blocks <span class="op">-=</span> current_layer_blocks  <span class="co"># Використовуємо блоки для побудови поточного шару</span></span>
+<span id="cb90-12"><a href="#cb90-12" aria-hidden="true" tabindex="-1"></a>    height <span class="op">+=</span> <span class="dv">1</span>  <span class="co"># Збільшуємо висоту</span></span>
+<span id="cb90-13"><a href="#cb90-13" aria-hidden="true" tabindex="-1"></a>    current_layer_blocks <span class="op">+=</span> <span class="dv">1</span>  <span class="co"># Наступний шар потребуватиме більше блоків</span></span>
+<span id="cb90-14"><a href="#cb90-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-15"><a href="#cb90-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Виводимо результат</span></span>
+<span id="cb90-16"><a href="#cb90-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The height of the pyramid:"</span>, height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter the number of blocks:  6</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The height of the pyramid: 3</code></pre>
+</div>
+</div>
+<div id="cell-75" class="cell" data-execution_count="69">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2</span></span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>blocks <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter the number of blocks: "</span>))</span>
+<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a>current_layer_blocks <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb93-6"><a href="#cb93-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-7"><a href="#cb93-7" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> blocks <span class="op">&gt;=</span> current_layer_blocks:</span>
+<span id="cb93-8"><a href="#cb93-8" aria-hidden="true" tabindex="-1"></a>    blocks <span class="op">-=</span> current_layer_blocks  </span>
+<span id="cb93-9"><a href="#cb93-9" aria-hidden="true" tabindex="-1"></a>    height <span class="op">+=</span> <span class="dv">1</span>  </span>
+<span id="cb93-10"><a href="#cb93-10" aria-hidden="true" tabindex="-1"></a>    current_layer_blocks <span class="op">+=</span> <span class="dv">1</span>  </span>
+<span id="cb93-11"><a href="#cb93-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb93-12"><a href="#cb93-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The height of the pyramid:"</span>, height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter the number of blocks:  20</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The height of the pyramid: 5</code></pre>
+</div>
+</div>
+<div id="cell-76" class="cell" data-execution_count="71">
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3</span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>blocks <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter the number of blocks: "</span>))</span>
+<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-4"><a href="#cb96-4" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb96-5"><a href="#cb96-5" aria-hidden="true" tabindex="-1"></a>current_layer_blocks <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb96-6"><a href="#cb96-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-7"><a href="#cb96-7" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> blocks <span class="op">&gt;=</span> current_layer_blocks:</span>
+<span id="cb96-8"><a href="#cb96-8" aria-hidden="true" tabindex="-1"></a>    blocks <span class="op">-=</span> current_layer_blocks  </span>
+<span id="cb96-9"><a href="#cb96-9" aria-hidden="true" tabindex="-1"></a>    height <span class="op">+=</span> <span class="dv">1</span>  </span>
+<span id="cb96-10"><a href="#cb96-10" aria-hidden="true" tabindex="-1"></a>    current_layer_blocks <span class="op">+=</span> <span class="dv">1</span>  </span>
+<span id="cb96-11"><a href="#cb96-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-12"><a href="#cb96-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The height of the pyramid:"</span>, height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter the number of blocks:  1000</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The height of the pyramid: 44</code></pre>
+</div>
+</div>
+<div id="cell-77" class="cell" data-execution_count="73">
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4</span></span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>blocks <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter the number of blocks: "</span>))</span>
+<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a>current_layer_blocks <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb99-6"><a href="#cb99-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-7"><a href="#cb99-7" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> blocks <span class="op">&gt;=</span> current_layer_blocks:</span>
+<span id="cb99-8"><a href="#cb99-8" aria-hidden="true" tabindex="-1"></a>    blocks <span class="op">-=</span> current_layer_blocks  </span>
+<span id="cb99-9"><a href="#cb99-9" aria-hidden="true" tabindex="-1"></a>    height <span class="op">+=</span> <span class="dv">1</span>  </span>
+<span id="cb99-10"><a href="#cb99-10" aria-hidden="true" tabindex="-1"></a>    current_layer_blocks <span class="op">+=</span> <span class="dv">1</span>  </span>
+<span id="cb99-11"><a href="#cb99-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-12"><a href="#cb99-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The height of the pyramid:"</span>, height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter the number of blocks:  2</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The height of the pyramid: 1</code></pre>
+</div>
+</div>
+</section>
+<section id="завдання-12" class="level3">
+<h3 class="anchored" data-anchor-id="завдання-12">Завдання 12</h3>
+<p>1937 року німецький математик Лотар Коллатц сформулював інтригуючу гіпотезу (вона досі не доведена), яку можна описати так:</p>
+<ul>
+<li>візьміть будь-яке невід’ємне та ненульове ціле число та назвіть його <code>c0</code>;</li>
+<li>якщо воно парне, обчисліть нове <code>c0</code> як <code>c0÷2</code>;</li>
+<li>в іншому випадку, якщо воно непарне, висиліть нове <code>c0</code>як <code>3 × c0 + 1</code>;</li>
+<li>якщо <code>c0 ≠ 1</code>, поверніться до пункту 2.</li>
+</ul>
+<p>Гіпотеза свідчить, що незалежно від початкового значення <code>c0</code> воно завжди дорівнюватиме <code>1</code>.</p>
+<p>Звичайно, використання комп’ютера для доведення гіпотези для будь-якого натурального числа – надзвичайно складне завдання (для цього може знадобитися навіть штучний інтелект), але ви можете використовувати Python для перевірки деяких окремих чисел. Можливо, Ви навіть знайдете те, що спростує гіпотезу.</p>
+<p>Напишіть програму, яка зчитує одне натуральне число і виконує вказані вище кроки до тих пір, поки <code>c0</code> залишається відмінним від <code>1</code>. Ми також хочемо, щоб ви підрахували кроки, необхідні для досягнення мети. Ваш код також повинен виводити усі проміжні значення <code>c0</code>.</p>
+<p>Підказка: найважливіша частина проблеми –- як перетворити ідею Коллатца на цикл <code>while</code> – це ключ до успіху.</p>
+<p>Протестуйте свій код, використовуючи надані нами дані.</p>
+<p><strong>Тестові дані</strong></p>
+<p>Приклад введення: <code>15</code></p>
+<p>Очікуваний вивід:</p>
+<p><code>46</code><br>
+<code>23</code><br>
+<code>70</code><br>
+<code>35</code><br>
+<code>106</code><br>
+<code>53</code><br>
+<code>160</code><br>
+<code>80</code><br>
+<code>40</code><br>
+<code>20</code><br>
+<code>10</code><br>
+<code>5</code><br>
+<code>16</code><br>
+<code>8</code><br>
+<code>4</code><br>
+<code>2</code><br>
+<code>1</code><br>
+<code>steps = 17</code></p>
+<p>Приклад введення: <code>16</code></p>
+<p>Очикуваний вивід:</p>
+<p><code>8</code><br>
+<code>4</code><br>
+<code>2</code><br>
+<code>1</code><br>
+<code>steps = 4</code></p>
+<p>Приклад введення: <code>1023</code></p>
+<p>Очікуваний вивід:</p>
+<p><code>3070</code><br>
+<code>1535</code><br>
+<code>4606</code><br>
+<code>2303</code><br>
+<code>6910</code><br>
+<code>3455</code><br>
+<code>10366</code><br>
+<code>5183</code><br>
+<code>15550</code><br>
+<code>7775</code><br>
+<code>23326</code><br>
+<code>11663</code><br>
+<code>34990</code><br>
+<code>17495</code><br>
+<code>52486</code><br>
+<code>26243</code><br>
+<code>78730</code><br>
+<code>39365</code><br>
+<code>118096</code><br>
+<code>59048</code><br>
+<code>29524</code><br>
+<code>14762</code><br>
+<code>7381</code><br>
+<code>22144</code><br>
+<code>11072</code><br>
+<code>5536</code><br>
+<code>2768</code><br>
+<code>1384</code><br>
+<code>692</code><br>
+<code>346</code><br>
+<code>173</code><br>
+<code>520</code><br>
+<code>260</code><br>
+<code>130</code><br>
+<code>65</code><br>
+<code>196</code><br>
+<code>98</code><br>
+<code>49</code><br>
+<code>148</code><br>
+<code>74</code><br>
+<code>37</code><br>
+<code>112</code><br>
+<code>56</code><br>
+<code>28</code><br>
+<code>14</code><br>
+<code>7</code><br>
+<code>22</code><br>
+<code>11</code><br>
+<code>34</code><br>
+<code>17</code><br>
+<code>52</code><br>
+<code>26</code><br>
+<code>13</code><br>
+<code>40</code><br>
+<code>20</code><br>
+<code>10</code><br>
+<code>5</code> <code>16</code><br>
+<code>8</code><br>
+<code>4</code><br>
+<code>2</code><br>
+<code>1</code><br>
+<code>steps = 62</code></p>
+<div id="cell-81" class="cell" data-execution_count="55">
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Мій код</span></span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Отримуємо початкове значення c0 від користувача</span></span>
+<span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a>c0 <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter a natural number: "</span>))</span>
+<span id="cb102-4"><a href="#cb102-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-5"><a href="#cb102-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Ініціалізуємо лічильник кроків</span></span>
+<span id="cb102-6"><a href="#cb102-6" aria-hidden="true" tabindex="-1"></a>steps <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb102-7"><a href="#cb102-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-8"><a href="#cb102-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Перевірка, що c0 є натуральним числом</span></span>
+<span id="cb102-9"><a href="#cb102-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> c0 <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb102-10"><a href="#cb102-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Поки c0 не дорівнює 1, виконуємо цикл</span></span>
+<span id="cb102-11"><a href="#cb102-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> c0 <span class="op">!=</span> <span class="dv">1</span>:</span>
+<span id="cb102-12"><a href="#cb102-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(c0)  <span class="co"># Виводимо поточне значення c0</span></span>
+<span id="cb102-13"><a href="#cb102-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> c0 <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb102-14"><a href="#cb102-14" aria-hidden="true" tabindex="-1"></a>            c0 <span class="op">=</span> c0 <span class="op">//</span> <span class="dv">2</span>  <span class="co"># Якщо парне, ділимо на 2</span></span>
+<span id="cb102-15"><a href="#cb102-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb102-16"><a href="#cb102-16" aria-hidden="true" tabindex="-1"></a>            c0 <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> c0 <span class="op">+</span> <span class="dv">1</span>  <span class="co"># Якщо непарне, застосовуємо формулу 3 * c0 + 1</span></span>
+<span id="cb102-17"><a href="#cb102-17" aria-hidden="true" tabindex="-1"></a>        steps <span class="op">+=</span> <span class="dv">1</span>  <span class="co"># Збільшуємо лічильник кроків</span></span>
+<span id="cb102-18"><a href="#cb102-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(c0)  <span class="co"># Виводимо 1 як фінальне значення</span></span>
+<span id="cb102-19"><a href="#cb102-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Steps ="</span>, steps)  <span class="co"># Виводимо кількість кроків</span></span>
+<span id="cb102-20"><a href="#cb102-20" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb102-21"><a href="#cb102-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Please enter a natural number greater than 0."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a natural number:  15</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>15
+46
+23
+70
+35
+106
+53
+160
+80
+40
+20
+10
+5
+16
+8
+4
+2
+1
+Steps = 17</code></pre>
+</div>
+</div>
+<div id="cell-82" class="cell" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2</span></span>
+<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a>c0 <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter a natural number: "</span>))</span>
+<span id="cb105-3"><a href="#cb105-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb105-4"><a href="#cb105-4" aria-hidden="true" tabindex="-1"></a>steps <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb105-5"><a href="#cb105-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> c0 <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb105-6"><a href="#cb105-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> c0 <span class="op">!=</span> <span class="dv">1</span>:</span>
+<span id="cb105-7"><a href="#cb105-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(c0)  </span>
+<span id="cb105-8"><a href="#cb105-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> c0 <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb105-9"><a href="#cb105-9" aria-hidden="true" tabindex="-1"></a>            c0 <span class="op">=</span> c0 <span class="op">//</span> <span class="dv">2</span>  </span>
+<span id="cb105-10"><a href="#cb105-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb105-11"><a href="#cb105-11" aria-hidden="true" tabindex="-1"></a>            c0 <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> c0 <span class="op">+</span> <span class="dv">1</span>  </span>
+<span id="cb105-12"><a href="#cb105-12" aria-hidden="true" tabindex="-1"></a>        steps <span class="op">+=</span> <span class="dv">1</span>  </span>
+<span id="cb105-13"><a href="#cb105-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(c0)  </span>
+<span id="cb105-14"><a href="#cb105-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Steps ="</span>, steps)  </span>
+<span id="cb105-15"><a href="#cb105-15" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb105-16"><a href="#cb105-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Please enter a natural number greater than 0."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a natural number:  16</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>16
+8
+4
+2
+1
+Steps = 4</code></pre>
+</div>
+</div>
+<div id="cell-83" class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3</span></span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a>c0 <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter a natural number: "</span>))</span>
+<span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-4"><a href="#cb108-4" aria-hidden="true" tabindex="-1"></a>steps <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb108-5"><a href="#cb108-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> c0 <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb108-6"><a href="#cb108-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> c0 <span class="op">!=</span> <span class="dv">1</span>:</span>
+<span id="cb108-7"><a href="#cb108-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(c0)  </span>
+<span id="cb108-8"><a href="#cb108-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> c0 <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb108-9"><a href="#cb108-9" aria-hidden="true" tabindex="-1"></a>            c0 <span class="op">=</span> c0 <span class="op">//</span> <span class="dv">2</span>  </span>
+<span id="cb108-10"><a href="#cb108-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb108-11"><a href="#cb108-11" aria-hidden="true" tabindex="-1"></a>            c0 <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> c0 <span class="op">+</span> <span class="dv">1</span>  </span>
+<span id="cb108-12"><a href="#cb108-12" aria-hidden="true" tabindex="-1"></a>        steps <span class="op">+=</span> <span class="dv">1</span>  </span>
+<span id="cb108-13"><a href="#cb108-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(c0)  </span>
+<span id="cb108-14"><a href="#cb108-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Steps ="</span>, steps)  </span>
+<span id="cb108-15"><a href="#cb108-15" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb108-16"><a href="#cb108-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Please enter a natural number greater than 0."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a natural number:  1023</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1023
+3070
+1535
+4606
+2303
+6910
+3455
+10366
+5183
+15550
+7775
+23326
+11663
+34990
+17495
+52486
+26243
+78730
+39365
+118096
+59048
+29524
+14762
+7381
+22144
+11072
+5536
+2768
+1384
+692
+346
+173
+520
+260
+130
+65
+196
+98
+49
+148
+74
+37
+112
+56
+28
+14
+7
+22
+11
+34
+17
+52
+26
+13
+40
+20
+10
+5
+16
+8
+4
+2
+1
+Steps = 62</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="завдання-для-самостіної-роботи" class="level2">
+<h2 class="anchored" data-anchor-id="завдання-для-самостіної-роботи">Завдання для самостіної роботи</h2>
+<ol type="1">
+<li><p>Виконати завдання 1-12 наведені вище у цьому зошиті.</p></li>
+<li><p>Створити файл <strong>lab_4_StudentLastName.py</strong> з написаним кодом.</p></li>
+<li><p>Закомітити файл у локальний репозиторій.</p></li>
+<li><p>Відправити (“запушити”) поточну версію Git-проєкта у віддалений репозиторій на GitHub.</p></li>
+<li><p>Звіт має складатися з файлу (за основу взяти <strong>цей Python-зошит</strong>) <code>lab_3_StudentLastName.ipynb</code>. (Можливі якісь додакові файли)</p></li>
+</ol>
+</section>
+<section id="контрольні-запитання" class="level2">
+<h2 class="anchored" data-anchor-id="контрольні-запитання">Контрольні запитання</h2>
+<ol type="1">
+<li><p>Який вивод наступного фрагмента? <img src="Lab_4_Gonchar_files/figure-html/cell-85-1-65c31290-2a18-4578-868c-c45b92da46b2.png" class="img-fluid" alt="image.png"></p></li>
+<li><p>Який вивод наступного фрагмента? <img src="Lab_4_Gonchar_files/figure-html/cell-85-2-6f079200-c1b9-4ecc-8400-433837d5236c.png" class="img-fluid" alt="image.png"></p></li>
+<li><p>Який вивод наступного фрагмента? <img src="Lab_4_Gonchar_files/figure-html/cell-85-3-97473cfe-64c8-4e49-8e3b-493f2f95f3c0.png" class="img-fluid" alt="image.png"></p></li>
+</ol>
+<div id="cell-87" class="cell" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="co">#1</span></span>
+<span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb111-3"><a href="#cb111-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb111-4"><a href="#cb111-4" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="dv">8</span></span>
+<span id="cb111-5"><a href="#cb111-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb111-6"><a href="#cb111-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">&gt;</span> y)</span>
+<span id="cb111-7"><a href="#cb111-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y <span class="op">&gt;</span> z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>False
+True</code></pre>
+</div>
+</div>
+<p>Змінні мають значення: x = 5, y = 10, z = 8. Перша команда print(x &gt; y) перевіряє, чи більше x (5) ніж y (10). Це невірно, тому результат буде False. Булеве значення False при виведенні буде еквівалентно 0. Друга команда print(y &gt; z) перевіряє, чи більше y (10) ніж z (8). Це вірно, тому результат буде True. Булеве значення True при виведенні буде еквівалентно 1.</p>
+<div id="cell-89" class="cell" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="co">#2 </span></span>
+<span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a>x, y, z <span class="op">=</span> <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">8</span></span>
+<span id="cb113-3"><a href="#cb113-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb113-4"><a href="#cb113-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">&gt;</span> z)</span>
+<span id="cb113-5"><a href="#cb113-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((y <span class="op">-</span> <span class="dv">5</span>) <span class="op">==</span> x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>False
+True</code></pre>
+</div>
+</div>
+<p>Спочатку змінним x, y, і z присвоюються значення: x = 5, y = 10, z = 8. Перша команда print(x &gt; z) перевіряє, чи більше x (5) ніж z (8). Це невірно, тому результат буде False. При використанні функції print(), результатом буде виведене значення 0, оскільки в Python булеве значення False еквівалентне 0. Друга команда print((y - 5) == x) перевіряє, чи дорівнює різниця між y (10) і 5 значенню x (5). Оскільки різниця y - 5 дійсно дорівнює 5, що дорівнює x, результат буде True. При виведенні булевого значення True результатом буде 1.</p>
+<div id="cell-91" class="cell" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co">#3</span></span>
+<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a>x, y, z <span class="op">=</span> <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">8</span></span>
+<span id="cb115-3"><a href="#cb115-3" aria-hidden="true" tabindex="-1"></a>x, y, z <span class="op">=</span> z, y, x</span>
+<span id="cb115-4"><a href="#cb115-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-5"><a href="#cb115-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">&gt;</span> z)</span>
+<span id="cb115-6"><a href="#cb115-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((y <span class="op">-</span> <span class="dv">5</span>) <span class="op">==</span> x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True
+False</code></pre>
+</div>
+</div>
+<p>Спочатку змінні x, y, z отримують значення: x = 5, y = 10, z = 8.</p>
+<p>Потім в наступному рядку значення змінних змінюються:</p>
+<p>Тепер x = z (тобто 8), y залишається незмінним, тобто y = 10, z = x (тобто 5). Отже, після цього рядка маємо нові значення: x = 8, y = 10, z = 5.</p>
+<p>Перша команда print(x &gt; z) перевіряє, чи більше x (8) ніж z (5). Це вірно, тому результат буде True (еквівалент 1).</p>
+<p>Друга команда print((y - 5) == x) перевіряє, чи дорівнює результат різниці y - 5 значенню x. Оскільки y = 10, то 10 - 5 = 5, що не дорівнює x (який дорівнює 8), тому результат буде False (еквівалент 0).</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
